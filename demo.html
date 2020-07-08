@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="venobox/venobox.css">
+    <script src="venobox/venobox.js"></script>
+    <style>
+        a{
+            display: block;
+            width:100px;
+            height:100px;
+            background:red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <a class="venobox" data-type="iframe"  href="http://localhost/Meeting/video/meeting.mp4"> 
+    </a>
+    <script>
+        $(document).ready(function () {
+            /* default settings */
+            $('.venobox').venobox();
+            /* open content with custom settings */
+            $('.venobox_custom').venobox({
+                framewidth: '300px',
+                frameheight: '250px',
+                border: '6px',
+                bordercolor: '#ba7c36',
+                numeratio: true
+            });
+            /* auto-open #firstlink on page load */
+            $("#firstlink").venobox().trigger('click');
+
+        });
+
+    </script>
+</body>
+
+</html>
